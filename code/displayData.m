@@ -1,9 +1,10 @@
 function [h, display_array] = displayData(X, example_width)
 
-if ~exist('example_width', 'var') || isempty(example_width) 
+if ~exist('example_width', 'var') || isempty(example_width)
 	example_width = round(sqrt(size(X, 2)));
 end
 
+% Gray Image
 colormap(gray);
 
 [m n] = size(X);
@@ -12,6 +13,7 @@ example_height = (n / example_width);
 display_rows = floor(sqrt(m));
 display_cols = ceil(m / display_rows);
 
+% Padding between images
 pad = 1;
 
 display_array = - ones(pad + display_rows * (example_height + pad), ...
@@ -38,6 +40,7 @@ end
 h = imagesc(display_array, [-1 1]);
 
 axis image off
+
 drawnow;
 
 end
