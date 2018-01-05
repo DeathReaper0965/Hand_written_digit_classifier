@@ -5,7 +5,7 @@ num_labels = 10;          % 10 labels, from 1 to 10
 
 fprintf('Loading and Visualizing Data ...\n')
 
-load('ex3data1.mat'); % training data stored in arrays X, y
+load('mnist_dataset.mat'); % training data stored in arrays X, y
 m = size(X, 1);
 
 rand_indices = randperm(m);
