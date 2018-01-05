@@ -6,7 +6,7 @@ num_labels = 10;          % 10 labels, from 1 to 10
 
 fprintf('Loading and Visualizing Data ...\n')
 
-load('ex3data1.mat');
+load('mnist_dataset.mat');
 m = size(X, 1);
 
 sel = randperm(size(X, 1));
@@ -19,7 +19,7 @@ pause;
 
 fprintf('\nLoading Saved Neural Network Parameters ...\n')
 
-load('ex3weights.mat');
+load('weights.mat');
 
 pred = predict(Theta1, Theta2, X);
 
