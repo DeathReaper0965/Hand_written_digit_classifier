@@ -25,13 +25,7 @@ costFunc = @(p) nnCostFunction(p, input_layer_size, hidden_layer_size, ...
 numgrad = computeNumericalGradient(costFunc, nn_params);
 
 disp([numgrad grad]);
-fprintf(['The above two columns you get should be very similar.\n' ...
-         '(Left-Your Numerical Gradient, Right-Analytical Gradient)\n\n']);
 
 diff = norm(numgrad-grad)/norm(numgrad+grad);
-
-fprintf(['If your backpropagation implementation is correct, then \n' ...
-         'the relative difference will be small (less than 1e-9). \n' ...
-         '\nRelative Difference: %g\n'], diff);
 
 end
